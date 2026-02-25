@@ -1,0 +1,353 @@
+/*
+  === SWISS STYLE CV - PROFESSIONAL & CLEAN ===
+  Respecte les standards suisses : sobre, structuré, lisible.
+  Optimisé pour l'impression A4 et le rendu PDF.
+*/
+
+/*
+  === RESET & VARIABLES ===
+*/
+:root {
+  /* Palette de couleurs */
+  --color-bg: #FFFFFF;           /* Fond blanc pur */
+  --color-text-main: #333333;    /* Gris très foncé pour le texte principal */
+  --color-text-muted: #555555;   /* Gris moyen pour les textes secondaires */
+  --color-accent: #2c3e50;       /* Bleu ardoise foncé (Dark Slate Blue) - Élégant et pro */
+  --color-border: #EEEEEE;       /* Bordures très légères */
+  --color-tag-bg: #F4F6F8;       /* Fond gris bleuté très clair pour les tags */
+
+  /* Typographie */
+  /* Police sans-serif propre et universelle */
+  --font-stack: "Helvetica Neue", Helvetica, Arial, "Roboto", sans-serif;
+  --line-height-base: 1.6;
+  
+  /* Espacement et Dimensions */
+  --page-width: 210mm;           /* Largeur A4 */
+  --page-min-height: 297mm;      /* Hauteur min A4 */
+  --page-padding: 40px;          /* Marges internes confortables */
+  --gap-main: 40px;              /* Espace entre colonnes */
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px; /* Taille de base légèrement réduite pour que tout tienne bien sur une page, mais lisible */
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: #525659; /* Fond gris foncé pour simuler l'espace de travail à l'écran */
+  color: var(--color-text-main);
+  line-height: var(--line-height-base);
+  
+  /* Centrage de la "page" à l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 0;
+  
+  /* Rendu de texte optimisé */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+  === CONTENEUR PRINCIPAL (FEUILLE A4) ===
+*/
+.cv-container {
+  background-color: var(--color-bg);
+  width: var(--page-width);
+  min-height: var(--page-min-height);
+  padding: var(--page-padding);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Ombre pour effet de profondeur à l'écran */
+  
+  /* Layout Grid principal : Sidebar (30%) - Main (70%) */
+  display: grid;
+  grid-template-columns: 3fr 7fr; /* Ratio ~30% / 70% */
+  gap: var(--gap-main);
+  align-items: start;
+}
+
+/*
+  === COLONNE GAUCHE / LATERALE (SIDEBAR) ===
+*/
+.cv-col--side {
+  /* Pas de styles structurels complexes ici, géré par le grid parent */
+  padding-right: 15px; /* Petit espacement visuel supplémentaire si nécessaire */
+}
+
+/* En-tête (Nom, Titre) */
+.cv-header {
+  margin-bottom: 35px;
+  border-bottom: 2px solid var(--color-accent); /* Ligne de séparation élégante */
+  padding-bottom: 15px;
+}
+
+.cv-title {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cv-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.cv-section-content {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* Sections latérales (Contact, Skills, Langues) */
+.cv-section {
+  margin-bottom: 30px;
+}
+
+.cv-section-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Liste de contacts */
+.cv-contact-list {
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-contact-list div {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.cv-contact-label {
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-right: 5px;
+  min-width: 50px; /* Alignement propre */
+}
+
+/* Tags (Compétences) */
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-tag {
+  background-color: var(--color-tag-bg);
+  color: var(--color-text-main);
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  border-radius: 4px; /* Coins légèrement arrondis */
+  font-weight: 500;
+}
+
+/* Centres d'intérêts */
+.cv-hobbies {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Footer (Github Link) */
+.cv-footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/*
+  === COLONNE DROITE / PRINCIPALE (MAIN CONTENT) ===
+*/
+.cv-col--main {
+  /* Utilise tout l'espace alloué par le Grid */
+}
+
+.cv-col--main .cv-section-content p {
+  margin-bottom: 15px;
+  text-align: justify; /* Justifié pour un bloc propre */
+}
+
+/* Listes d'items (Expériences, Formations) */
+.cv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.cv-item {
+  /* Structure interne item : date à gauche, contenu à droite */
+  display: grid;
+  grid-template-columns: 100px 1fr; /* Date fixe, contenu fluide */
+  gap: 20px;
+  
+  /* Evite impérativement la coupure à l'intérieur d'un bloc Expérience à l'impression */
+  break-inside: avoid; 
+  page-break-inside: avoid;
+}
+
+.cv-item-date {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-align: right; /* Date alignée à droite vers le contenu */
+  font-weight: 500;
+  padding-top: 2px; /* Alignement optique avec le titre */
+}
+
+.cv-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cv-item-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.cv-item-meta {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.cv-item-desc {
+  font-size: 0.95rem;
+}
+
+.cv-item-desc ul {
+  list-style-position: inside; /* Puces alignées ou inside */
+  margin-top: 5px;
+}
+
+.cv-item-desc li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/*
+  === ADAPTATION POUR ÉCRANS (RESPONSIVE) ===
+  Si vu sur mobile, on repasse en une colonne.
+*/
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 0;
+    background-color: #fff;
+    display: block;
+  }
+  
+  .cv-container {
+    width: 100%;
+    min-height: auto;
+    box-shadow: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Empile les sections */
+    gap: 30px;
+  }
+
+  /* Reset dates pour mobile */
+  .cv-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cv-item-date {
+    text-align: left;
+    margin-bottom: 2px;
+  }
+  
+  .cv-col--side {
+    padding-right: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 20px;
+  }
+}
+
+/*
+  === RÈGLES D'IMPRESSION (PRINT) ===
+  CRUCIAL pour l'export PDF
+*/
+@media print {
+  @page {
+    size: A4;
+    margin: 0; /* On gère les marges via le padding du container */
+  }
+
+  body {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-container {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 15mm 15mm !important; /* Marges physiques papier */
+    
+    /* Force le Grid layout à l'impression */
+    display: grid !important;
+    grid-template-columns: 3fr 7fr !important;
+    gap: 30px !important;
+  }
+
+  /* Masquer les éléments inutiles à l'impression */
+  .cv-footer {
+    display: none !important;
+  }
+
+  /* Désactiver les liens bleus par défaut */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+  
+  /* Gestion des sauts de page */
+  h1, h2, h3, .cv-section-title, .cv-item-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  
+  .cv-section, .cv-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
