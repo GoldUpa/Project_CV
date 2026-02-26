@@ -17,7 +17,19 @@ Contacts (email, GitHub, LinkedIn).
 Le site est accessible via l'URL GitHub Pages : https://goldupa.github.io/Project_CV/
 
 Fonctionnalités JavaScript
-[À compléter].
+Timeline interactive
+Pour rendre la lecture de mon CV plus visuelle, j’ai intégré une timeline interactive pour les sections « Expériences professionnelles » et « Formations ».
+Chaque expérience ou formation est représentée par un bloc avec une date (ou une période) et un court intitulé.
+
+En JavaScript, j’ajoute un écouteur d’événements sur chaque élément de la timeline.
+Quand l’utilisateur clique sur une date ou sur le bloc correspondant :
+
+une classe CSS active est ajoutée/supprimée sur l’élément,
+
+cette classe contrôle l’ouverture/fermeture du détail (description, tâches, contexte) à l’aide de transitions CSS (hauteur/opacity).
+
+Ainsi, une seule expérience est mise en avant à la fois, ce qui évite de surcharger la page et permet au recruteur de se concentrer sur l’entrée qui l’intéresse.
+Cette fonctionnalité reste sobre et professionnelle, mais montre l’utilisation de JavaScript pour manipuler le DOM (gestion des événements, ajout/suppression de classes) et améliorer l’ergonomie du CV en ligne..
 ​
 
 Workflow Git utilisé
