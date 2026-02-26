@@ -256,6 +256,82 @@ body {
   line-height: 1.5;
 }
 
+/* Timeline interactive (formations / expériences) */
+.cv-list.js-timeline {
+  position: relative;
+}
+
+.cv-list.js-timeline::before {
+  content: "";
+  position: absolute;
+  left: 121px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background-color: var(--color-border);
+}
+
+.cv-list.js-timeline .cv-item {
+  grid-template-columns: 110px 1fr;
+  gap: 22px;
+  position: relative;
+  border-left: 2px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.cv-item-date--interactive {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.cv-item-date--interactive:hover,
+.cv-item-date--interactive:focus-visible {
+  color: var(--color-accent);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 114px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-bg);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.25s ease;
+}
+
+.timeline-dot:hover,
+.timeline-dot:focus-visible {
+  transform: scale(1.1);
+}
+
+.js-enabled .js-timeline .cv-item .cv-item-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+.js-enabled .js-timeline .cv-item.is-active {
+  border-left-color: var(--color-accent);
+  background-color: var(--color-tag-bg);
+}
+
+.js-enabled .js-timeline .cv-item.is-active .cv-item-desc {
+  max-height: 240px;
+  opacity: 1;
+  margin-top: 4px;
+}
+
+.js-enabled .js-timeline .cv-item.is-active .timeline-dot {
+  background-color: var(--color-accent);
+}
+
 /*
   === ADAPTATION POUR ÉCRANS (RESPONSIVE) ===
   Si vu sur mobile, on repasse en une colonne.
@@ -287,6 +363,17 @@ body {
   .cv-item-date {
     text-align: left;
     margin-bottom: 2px;
+  }
+
+  .cv-list.js-timeline::before,
+  .timeline-dot {
+    display: none;
+  }
+
+  .cv-list.js-timeline .cv-item {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
   }
   
   .cv-col--side {
