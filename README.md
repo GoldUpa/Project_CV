@@ -29,7 +29,20 @@ une classe CSS active est ajoutée/supprimée sur l’élément,
 cette classe contrôle l’ouverture/fermeture du détail (description, tâches, contexte) à l’aide de transitions CSS (hauteur/opacity).
 
 Ainsi, une seule expérience est mise en avant à la fois, ce qui évite de surcharger la page et permet au recruteur de se concentrer sur l’entrée qui l’intéresse.
-Cette fonctionnalité reste sobre et professionnelle, mais montre l’utilisation de JavaScript pour manipuler le DOM (gestion des événements, ajout/suppression de classes) et améliorer l’ergonomie du CV en ligne..
+Cette fonctionnalité reste sobre et professionnelle, mais montre l’utilisation de JavaScript pour manipuler le DOM (gestion des événements, ajout/suppression de classes) et améliorer l’ergonomie du CV en ligne.
+
+Lecture vidéo du projet (modale)
+
+Pour présenter visuellement mon CV en ligne, j’ai intégré une fenêtre modale qui permet de lire une vidéo de démo du projet sans quitter la page.
+
+Un bouton « Voir la démo vidéo » ouvre cette modale en plein écran avec un lecteur vidéo intégré.
+
+En JavaScript, des fonctions openVideo() et closeVideo() gèrent l’ouverture et la fermeture de la modale : ajout/retrait d’une classe CSS show, lancement de la lecture, pause et remise à zéro de la vidéo quand on ferme.
+​
+Un écouteur global sur window ferme aussi la modale si l’utilisateur clique en dehors du contenu, ce qui améliore l’ergonomie.
+​
+
+La partie CSS associe cette classe show à un affichage en overlay (fond assombri, centrage du player, animations d’apparition), tout en masquant la modale par défaut et à l’impression pour garder un rendu CV propre en PDF.
 ​
 
 Workflow Git utilisé
