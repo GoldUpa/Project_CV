@@ -151,6 +151,7 @@
                   <li>Gestion de plusieurs petits projets.</li>
                   <li>Réalisation d’un projet complet (conception, informatique).</li>
                 </ul>
+                <button class="cv-btn-video" onclick="openVideo()">Voir la démo du projet</button>
               </div>
             </div>
           </article>
@@ -172,6 +173,19 @@
       </section>
     </section>
   </main>
+  
+  <!-- Modal Vidéo -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="video-close" onclick="closeVideo()">&times;</span>
+      <h3 class="video-modal-title">Démo du projet MCT</h3>
+      <video id="projectVideo" controls>
+        <source src="DominoInfini.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
+
   <script src="fonctionnalite.js" defer></script>
 </body>
 </html>

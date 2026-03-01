@@ -74,3 +74,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 });
+/* === Gestion de la Modale Vidéo === */
+function openVideo() {
+  const modal = document.getElementById("videoModal");
+  if (modal) {
+    modal.classList.add("show");
+    const video = modal.querySelector('video');
+    if (video) {
+        video.play().catch(e => console.warn("Autoplay blocked:", e));
+    }
+  }
+}
+
+function closeVideo() {
+  const modal = document.getElementById("videoModal");
+  if (modal) {
+    modal.classList.remove("show");
+    const video = modal.querySelector('video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0; 
+    }
+  }
+}
+
+// Fermer la modale si on clique en dehors du contenu
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById("videoModal");
+  if (event.target === modal) {
+    closeVideo();
+  }
+});
